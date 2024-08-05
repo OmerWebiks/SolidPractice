@@ -11,6 +11,7 @@ namespace SolidTest.classes
     {
         private readonly IMessageSender _messageSender;
 
+
         public NotificationService(IMessageSender messageSender)
         {
             this._messageSender = messageSender;
