@@ -11,7 +11,13 @@ namespace SolidTest.classes
     {
         public void SendMessage(string recipient, string message)
         {
+            if (Validators.ValidateEmail(recipient)) { 
             Console.WriteLine($"Email sent to {recipient}, content: {message}");
+            
+           } else
+            {
+                throw new Exception("Invalid email, try again");
+            }
         }
     }
 }
