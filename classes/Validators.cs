@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
 namespace SolidTest.classes
 {
@@ -14,7 +15,16 @@ namespace SolidTest.classes
 
         public static bool ValidateEmail(string email)
         {
-            return email.EndsWith("@gmail.com");
+            // ^[^@\s]+@[^@\s]+\.(com|net|org|gov)$
+
+            // ^
+            // [^@\s]+
+            // @
+            // [^@\s]+
+            // \.
+            // (com|net|org|gov)$
+            string emailRegex = @"^[^@\s]+@[^@\s]+\.(com|net|org|gov)$";
+            return Regex.IsMatch(email, emailRegex);
         }
     }
 }
